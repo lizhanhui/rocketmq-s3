@@ -118,7 +118,7 @@ public class DefaultS3MetadataService implements S3MetadataService {
             HotSpotDiagnosticMXBean mxBean = ManagementFactory.newPlatformMXBeanProxy(ManagementFactory.getPlatformMBeanServer(),
                 "com.sun.management:type=HotSpotDiagnostic", HotSpotDiagnosticMXBean.class);
             String userHome = System.getProperty("user.home");
-            mxBean.dumpHeap(userHome + File.separator + "heap.bin", true);
+            mxBean.dumpHeap(userHome + File.separator + "heap.hprof", true);
             System.exit(1);
         } catch (IOException e) {
             throw new RuntimeException(e);
